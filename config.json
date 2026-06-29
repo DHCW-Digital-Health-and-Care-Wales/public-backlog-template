@@ -1,0 +1,30 @@
+{
+  "team": {
+    "name": "Primary, Community and Mental Health",
+    "organisation": {
+      "en": "Digital Health and Care Wales",
+      "cy": "Iechyd a Gofal Digidol Cymru"
+    }
+  },
+  "github": {
+    "owner": "DHCW-Digital-Health-and-Care-Wales",
+    "repo": "public-backlog-template",
+    "featureTemplate": "feature_request.yml"
+  },
+  "branding": { "primary": "#005AA8", "primaryDark": "#1B294A" },
+  "language": { "default": "en", "available": ["en", "cy"] },
+  "labels": {
+    "status": {
+      "considering": "status: considering",
+      "inProgress": "status: in-progress",
+      "backlog": "status: backlog",
+      "parked": "status: parked",
+      "shipped": "status: shipped"
+    },
+    "needsTriage": "needs-triage"
+  },
+  "backlog": { "sort": "curated", "manifest": "data/backlog-order.yml" },
+  "shipped": { "enabled": true, "limit": 12 },
+  "health": { "inProgressStaleDays": 30, "snapshotStaleHours": 6 },
+  "data": { "mode": "snapshot", "snapshotPath": "backlog.json" }
+}
