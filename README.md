@@ -2,6 +2,8 @@
 
 A DHCW template for publishing a product backlog in the open. It is a public, accessible, bilingual website that shows people what a team is considering, what it is building, what is queued, and what it has decided against, sourced from GitHub Issues, with upvoting and a route to suggest new ideas. Any DHCW team can fork it and make it their own.
 
+The pages site can be accessed here to see what this will look like to a user: https://dhcw-digital-health-and-care-wales.github.io/public-backlog-template/
+
 Built on the DHCW Design System V2, Digital Health and Care Wales (Iechyd a Gofal Digidol Cymru), hosted free on GitHub Pages, with no backend and no tracking.
 
 **About this template.** It ships with example items so the layout renders with something in it. Replace them with your own work, or point it at your repository's Issues. See [Fork this for your team](#fork-this-for-your-team).
