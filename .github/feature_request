@@ -1,0 +1,70 @@
+name: Suggest a feature
+description: Suggest a new feature or improvement for this service. / Awgrymu nodwedd neu welliant.
+title: "[Idea]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping to improve this service. **Diolch am eich help.**
+
+        We work in the open, so your suggestion will be public and anyone can read, upvote and comment on it. Please do not include any personal or confidential information, your own or anyone else's.
+
+        New suggestions are reviewed by our team before they appear on the public board. This usually takes a few working days.
+
+        _Mae awgrymiadau newydd yn cael eu hadolygu gan ein tîm cyn iddynt ymddangos ar y bwrdd cyhoeddus._
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve? / Pa broblem rydych chi'n ceisio ei datrys?
+      description: Tell us what is difficult or missing today. Focus on the need, not the solution.
+      placeholder: "For example: clinic staff enter the same details twice, which takes time and causes errors."
+    validations:
+      required: true
+
+  - type: textarea
+    id: who
+    attributes:
+      label: Who does this affect? / Pwy mae hyn yn effeithio arno?
+      description: Which users, teams or services would benefit. A rough idea of how many people is helpful.
+      placeholder: "For example: immunisation teams across all health boards during the autumn campaign."
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see? / Beth hoffech chi ei weld?
+      description: If you have an idea for how it could work, describe it here. This is optional. We may suggest a different approach.
+    validations:
+      required: false
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: How would we know it is working? / Sut byddem yn gwybod ei fod yn gweithio?
+      description: What would be better if we built this. This helps us measure whether it made a difference.
+      placeholder: "For example: staff spend less time on data entry, fewer duplicate records are created."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How time sensitive is this? / Pa mor sensitif i amser yw hyn?
+      description: This helps us prioritise. It does not commit us to a date.
+      options:
+        - Not urgent, a general improvement
+        - Useful soon, but we can plan around it
+        - Tied to a specific deadline or campaign
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit / Cyn i chi gyflwyno
+      options:
+        - label: I understand this request will be public and contains no personal or confidential information.
+          required: true
