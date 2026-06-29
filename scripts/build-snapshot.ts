@@ -28,7 +28,7 @@ async function fetchIssues(config: Config, token: string): Promise<GithubIssue[]
       `https://api.github.com/repos/${owner}/${repo}/issues?state=all&per_page=100&page=${page}`,
       {
         headers: {
-          Authorization: `******en}`,
+          Authorization: `Bearer ${token}`,
           Accept: 'application/vnd.github+json',
           'X-GitHub-Api-Version': '2022-11-28',
         },
