@@ -1,0 +1,85 @@
+/* Self-hosted Roboto (no third-party font service). DHCW digital interface
+   font; Rubik is the document font and is deliberately not used here.
+   font-display: optional avoids the layout shift (CLS) from a late font swap:
+   the browser keeps the fallback for a load if Roboto is not ready in time,
+   and applies Roboto with no reflow. */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('@fontsource/roboto/files/roboto-latin-400-normal.woff2')
+      format('woff2'),
+    url('@fontsource/roboto/files/roboto-latin-400-normal.woff') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url('@fontsource/roboto/files/roboto-latin-500-normal.woff2')
+      format('woff2'),
+    url('@fontsource/roboto/files/roboto-latin-500-normal.woff') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('@fontsource/roboto/files/roboto-latin-700-normal.woff2')
+      format('woff2'),
+    url('@fontsource/roboto/files/roboto-latin-700-normal.woff') format('woff');
+}
+
+/* Metrics-matched fallback so the system font occupies close to the same space
+   as Roboto before it loads, further reducing any layout shift. */
+@font-face {
+  font-family: 'Roboto Fallback';
+  src: local('Arial'), local('Liberation Sans'), local('Helvetica');
+  ascent-override: 92.77%;
+  descent-override: 24.42%;
+  line-gap-override: 0%;
+  size-adjust: 100.37%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-subtle font-sans text-ink-900;
+  }
+
+  /* Visible focus that meets contrast (WCAG 2.2 AA). */
+  :focus-visible {
+    outline: 3px solid #005aa8;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply absolute left-2 top-2 z-50 -translate-y-20 rounded bg-action px-4 py-2 text-surface focus:translate-y-0;
+  }
+}
+
+/* Honour reduced-motion: no non-essential animation. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

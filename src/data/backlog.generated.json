@@ -1,0 +1,279 @@
+{
+  "generatedAt": "2026-06-29T13:16:03.695Z",
+  "columns": {
+    "considering": [
+      {
+        "number": 21,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/21",
+        "status": "considering",
+        "title": {
+          "en": "Reminders by text message",
+          "cy": "Reminders by text message"
+        },
+        "summary": {
+          "en": "Send appointment reminders by text message, so fewer people miss appointments.",
+          "cy": "Anfon nodiadau atgoffa apwyntiadau drwy neges destun, fel bod llai o bobl yn methu apwyntiadau."
+        },
+        "tags": [
+          "type: reminders"
+        ],
+        "votes": 34,
+        "createdAt": "2026-06-10T09:00:00Z",
+        "updatedAt": "2026-06-20T09:00:00Z",
+        "shippedAt": null,
+        "flags": []
+      },
+      {
+        "number": 25,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/25",
+        "status": "considering",
+        "title": {
+          "en": "Dark mode for the clinic dashboard",
+          "cy": "Dark mode for the clinic dashboard"
+        },
+        "summary": {
+          "en": "Offer a dark colour theme for staff who work long shifts on the dashboard.",
+          "cy": ""
+        },
+        "tags": [
+          "type: accessibility"
+        ],
+        "votes": 12,
+        "createdAt": "2026-06-25T09:00:00Z",
+        "updatedAt": "2026-06-26T09:00:00Z",
+        "shippedAt": null,
+        "flags": [
+          "missing-welsh"
+        ]
+      }
+    ],
+    "in-progress": [
+      {
+        "number": 12,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/12",
+        "status": "in-progress",
+        "title": {
+          "en": "Single sign-on for clinic staff",
+          "cy": "Single sign-on for clinic staff"
+        },
+        "summary": {
+          "en": "Let clinic staff sign in once with their NHS Wales account, instead of a separate password for this service.",
+          "cy": "Gadewch i staff clinig fewngofnodi unwaith gyda'u cyfrif GIG Cymru, yn lle cyfrinair ar wahan ar gyfer y gwasanaeth hwn."
+        },
+        "tags": [
+          "type: access"
+        ],
+        "votes": 12,
+        "createdAt": "2026-03-01T09:00:00Z",
+        "updatedAt": "2026-06-22T14:00:00Z",
+        "shippedAt": null,
+        "flags": []
+      },
+      {
+        "number": 9,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/9",
+        "status": "in-progress",
+        "title": {
+          "en": "Bulk export of vaccination records",
+          "cy": "Bulk export of vaccination records"
+        },
+        "summary": {
+          "en": "Export a clinic's vaccination records in a single file for audit and reporting.",
+          "cy": "Allforio cofnodion brechu clinig mewn un ffeil ar gyfer archwilio ac adrodd."
+        },
+        "tags": [
+          "type: reporting"
+        ],
+        "votes": 6,
+        "createdAt": "2025-11-01T09:00:00Z",
+        "updatedAt": "2026-02-10T11:00:00Z",
+        "shippedAt": null,
+        "flags": [
+          "stale-in-progress"
+        ]
+      }
+    ],
+    "backlog": [
+      {
+        "number": 17,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/17",
+        "status": "backlog",
+        "title": {
+          "en": "Offline mode for rural clinics",
+          "cy": "Offline mode for rural clinics"
+        },
+        "summary": {
+          "en": "Keep the service usable where the network drops, syncing records when the connection returns.",
+          "cy": "Cadw'r gwasanaeth yn ddefnyddiadwy lle mae'r rhwydwaith yn gollwng, gan gysoni cofnodion pan ddaw'r cysylltiad yn ol."
+        },
+        "tags": [
+          "service: clinics"
+        ],
+        "votes": 20,
+        "createdAt": "2026-04-20T10:00:00Z",
+        "updatedAt": "2026-06-12T10:00:00Z",
+        "shippedAt": null,
+        "flags": []
+      },
+      {
+        "number": 14,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/14",
+        "status": "backlog",
+        "title": {
+          "en": "Welsh-language SMS reminders by default",
+          "cy": "Welsh-language SMS reminders by default"
+        },
+        "summary": {
+          "en": "Send reminders in a person's chosen language by default, including Welsh.",
+          "cy": "Anfon nodiadau atgoffa yn iaith ddewisol y person yn ddiofyn, gan gynnwys Cymraeg."
+        },
+        "tags": [
+          "type: reminders",
+          "cymraeg"
+        ],
+        "votes": 41,
+        "createdAt": "2026-04-15T10:00:00Z",
+        "updatedAt": "2026-06-18T10:00:00Z",
+        "shippedAt": null,
+        "flags": []
+      },
+      {
+        "number": 19,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/19",
+        "status": "backlog",
+        "title": {
+          "en": "Barcode scanning for vaccine batch numbers",
+          "cy": "Barcode scanning for vaccine batch numbers"
+        },
+        "summary": {
+          "en": "Scan the batch number from the vial barcode, instead of typing it, to cut data-entry errors.",
+          "cy": "Sganio'r rhif swp o god bar y ffiol, yn lle ei deipio, i leihau gwallau cofnodi data."
+        },
+        "tags": [
+          "type: data-quality"
+        ],
+        "votes": 8,
+        "createdAt": "2026-05-02T10:00:00Z",
+        "updatedAt": "2026-06-05T10:00:00Z",
+        "shippedAt": null,
+        "flags": []
+      }
+    ],
+    "parked": [
+      {
+        "number": 7,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/7",
+        "status": "parked",
+        "title": {
+          "en": "Native mobile app",
+          "cy": "Native mobile app"
+        },
+        "summary": {
+          "en": "Build a native iOS and Android app in addition to the website.",
+          "cy": "Adeiladu ap brodorol iOS ac Android yn ychwanegol at y wefan."
+        },
+        "tags": [
+          "type: platform"
+        ],
+        "votes": 15,
+        "createdAt": "2026-02-01T10:00:00Z",
+        "updatedAt": "2026-05-20T10:00:00Z",
+        "shippedAt": null,
+        "flags": [],
+        "rationale": {
+          "en": "The website already works well on mobile browsers, so a native app would duplicate effort for little gain right now. We will revisit this if offline needs grow.",
+          "cy": "Mae'r wefan eisoes yn gweithio'n dda ar boryddion symudol, felly byddai ap brodorol yn dyblygu ymdrech am ychydig o fudd ar hyn o bryd. Byddwn yn ailystyried hyn os bydd anghenion all-lein yn tyfu."
+        }
+      },
+      {
+        "number": 8,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/8",
+        "status": "parked",
+        "title": {
+          "en": "Integrate with a third-party booking widget",
+          "cy": "Integrate with a third-party booking widget"
+        },
+        "summary": {
+          "en": "Embed an external booking widget rather than building our own booking flow.",
+          "cy": "Mewnosod teclyn archebu allanol yn hytrach nag adeiladu ein llif archebu ein hunain."
+        },
+        "tags": [
+          "type: integration"
+        ],
+        "votes": 4,
+        "createdAt": "2026-02-12T10:00:00Z",
+        "updatedAt": "2026-05-22T10:00:00Z",
+        "shippedAt": null,
+        "flags": [],
+        "rationale": {
+          "en": "A third-party widget would send patient data to an external processor, which we cannot justify for this service. We will keep booking in-house.",
+          "cy": "Byddai teclyn trydydd parti yn anfon data cleifion at brosesydd allanol, na allwn ei gyfiawnhau ar gyfer y gwasanaeth hwn. Byddwn yn cadw archebu yn fewnol."
+        }
+      }
+    ],
+    "shipped": [
+      {
+        "number": 30,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/30",
+        "status": "shipped",
+        "title": {
+          "en": "Accessible colour contrast across the dashboard",
+          "cy": "Accessible colour contrast across the dashboard"
+        },
+        "summary": {
+          "en": "Every text and interface element now meets WCAG 2.2 AA contrast.",
+          "cy": "Mae pob elfen testun a rhyngwyneb bellach yn bodloni cyferbyniad WCAG 2.2 AA."
+        },
+        "tags": [
+          "type: accessibility"
+        ],
+        "votes": 18,
+        "createdAt": "2026-01-10T10:00:00Z",
+        "updatedAt": "2026-05-15T10:00:00Z",
+        "shippedAt": "2026-05-15T10:00:00Z",
+        "flags": []
+      },
+      {
+        "number": 28,
+        "url": "https://github.com/DHCW-Digital-Health-and-Care-Wales/public-backlog-template/issues/28",
+        "status": "shipped",
+        "title": {
+          "en": "Search clinics by postcode",
+          "cy": "Search clinics by postcode"
+        },
+        "summary": {
+          "en": "People can now find their nearest clinic by entering a postcode.",
+          "cy": "Gall pobl bellach ddod o hyd i'w clinig agosaf drwy nodi cod post."
+        },
+        "tags": [
+          "type: search"
+        ],
+        "votes": 22,
+        "createdAt": "2026-01-05T10:00:00Z",
+        "updatedAt": "2026-03-30T10:00:00Z",
+        "shippedAt": "2026-03-30T10:00:00Z",
+        "flags": []
+      }
+    ]
+  },
+  "health": {
+    "staleInProgress": 1,
+    "untriaged": 1,
+    "oldestUntriagedDays": 2,
+    "contentErrors": 1,
+    "flags": [
+      {
+        "number": 9,
+        "flags": [
+          "stale-in-progress"
+        ]
+      },
+      {
+        "number": 25,
+        "flags": [
+          "missing-welsh"
+        ]
+      }
+    ]
+  }
+}

@@ -111,7 +111,9 @@ npm install      # install dependencies
 npm run dev      # start the development server
 npm run build    # type-check and build for production into dist/
 npm run preview  # preview the production build locally
-npm run test     # run the test suite
+npm run test     # run the unit and DOM test suite (Vitest)
+npm run test:e2e # run end-to-end and accessibility tests (Playwright, axe)
+npm run lhci     # run the Lighthouse performance and accessibility budgets
 npm run lint     # run ESLint
 ```
 

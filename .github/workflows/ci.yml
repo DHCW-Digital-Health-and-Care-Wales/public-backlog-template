@@ -1,0 +1,48 @@
+name: CI
+
+# Runs the deterministic test suite (specs/09): lint, unit and DOM tests,
+# Playwright end-to-end with axe accessibility, and Lighthouse budgets. All
+# tests run against fixtures/issues.sample.json with no network access.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build (offline, from fixture)
+        run: npm run build
+
+      - name: Unit and DOM tests
+        run: npm test
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end and accessibility tests
+        run: npm run test:e2e
+
+      - name: Lighthouse budgets
+        run: npm run lhci

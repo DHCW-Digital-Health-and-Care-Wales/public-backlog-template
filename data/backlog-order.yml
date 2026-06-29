@@ -1,0 +1,22 @@
+# Curated priority order for the Backlog column.
+#
+# This file is the team's prioritisation decision, made in the open and
+# reviewable in a pull request. The Backlog column renders in this order,
+# top of the list = highest priority.
+#
+# Rules the renderer follows (see specs/03-information-architecture.md):
+#   - Only issues labelled "status: backlog" are eligible.
+#   - Issues listed here appear first, in this exact order.
+#   - Any "status: backlog" issue NOT listed here is appended afterwards,
+#     ordered by upvotes (descending), so nothing is ever hidden by omission.
+#   - Numbers that no longer match an open "status: backlog" issue are ignored.
+#
+# Note: this order is deliberately NOT the same as the upvote order.
+# Issue 17 sits above issue 14 here even though 14 has more upvotes,
+# because the team has judged it the higher priority. Votes are a signal,
+# not the decision (see specs/02-analysis-and-architecture.md, ADR-002).
+
+order:
+  - 17   # Offline mode for rural clinics
+  - 14   # Welsh-language SMS reminders by default
+  - 19   # Barcode scanning for vaccine batch numbers
