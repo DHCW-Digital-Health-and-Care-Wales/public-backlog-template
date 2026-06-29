@@ -66,3 +66,17 @@ A feature is done when:
 | AC-NFR-02, 06, 10 | Manual / Lighthouse CI |
 
 Keep this matrix current as criteria are added or changed. A criterion without a corresponding test is a gap, and a test without a criterion is either dead or a missing criterion.
+
+## Where the tests live
+
+The matrix above is realised by these files. All run offline against `fixtures/issues.sample.json`.
+
+| Layer | Files |
+|-------|-------|
+| Pipeline and unit (Vitest) | `tests/unit/pipeline.test.ts`, `tests/unit/normalise.test.ts`, `tests/unit/ordering.test.ts`, `tests/unit/urls.test.ts` |
+| DOM (Vitest, jsdom) | `tests/unit/dom.test.tsx` |
+| End to end (Playwright) | `tests/e2e/board.spec.ts`, `tests/e2e/no-js.spec.ts`, `tests/e2e/stale.spec.ts` |
+| Accessibility (axe) | `tests/e2e/a11y.spec.ts` |
+| Performance and accessibility budgets | `lighthouserc.cjs` (Lighthouse CI) |
+
+Run them with `npm test` (Vitest), `npm run test:e2e` (Playwright and axe) and `npm run lhci` (Lighthouse budgets). The whole suite also runs in CI on every pull request via `.github/workflows/ci.yml`.

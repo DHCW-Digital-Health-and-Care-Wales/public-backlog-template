@@ -26,6 +26,7 @@ export default {
       fontFamily: {
         sans: [
           'Roboto',
+          'Roboto Fallback',
           'system-ui',
           '-apple-system',
           'Segoe UI',

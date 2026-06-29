@@ -1,0 +1,62 @@
+name: Update backlog snapshot
+
+# Snapshots GitHub Issues into a static data file at build time (specs/07).
+# The browser never calls the GitHub API at request time and never holds a
+# token; the built-in GITHUB_TOKEN is used here with least privilege.
+
+on:
+  schedule:
+    # Every 20 minutes.
+    - cron: '*/20 * * * *'
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened, deleted]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/backlog-order.yml'
+      - 'config.json'
+      - 'scripts/build-snapshot.ts'
+      - 'src/lib/**'
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: update-backlog
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build snapshot from live Issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run build:data
+
+      - name: Commit snapshot if it changed
+        run: |
+          if [[ -n "$(git status --porcelain src/data/backlog.generated.json public/backlog.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/backlog.generated.json public/backlog.json
+            git commit -m "chore: refresh backlog snapshot"
+            git push
+          else
+            echo "No snapshot changes."
+          fi

@@ -1,0 +1,71 @@
+name: Deploy to GitHub Pages
+
+# Builds the site (using the committed snapshot as the build input) and deploys
+# it to GitHub Pages. No token reaches the client bundle (specs/07, specs/08).
+#
+# IMPORTANT: the Pages source must be set to "GitHub Actions" in the repository
+# settings (Settings > Pages > Build and deployment > Source). This is a manual
+# step that cannot be automated.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build snapshot from live Issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        # Refresh the snapshot from live Issues. On failure the committed
+        # snapshot is used instead, so a failed fetch never breaks the deploy.
+        run: npm run build:data || echo "Using committed snapshot."
+
+      - name: Build site
+        # Skip the snapshot step in build (already run above) by building the
+        # client, server and prerender directly.
+        run: |
+          npx tsc --noEmit
+          npm run build:client
+          npm run build:server
+          npm run prerender
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

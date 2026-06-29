@@ -15,6 +15,9 @@ module.exports = {
   ignorePatterns: ['dist', 'dist-ssr', 'node_modules', 'figma-make-export', 'src/data'],
   rules: {
     'react/prop-types': 'off',
+    // Welsh and English interface copy contains apostrophes; escaping every
+    // one harms readability and the content is static, author-controlled text.
+    'react/no-unescaped-entities': 'off',
     '@typescript-eslint/no-explicit-any': 'warn',
   },
 };
