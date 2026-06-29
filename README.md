@@ -56,3 +56,16 @@ The short version: votes are a signal and not the decision; the site is static a
 ## Licence
 
 Specification and template code released under the MIT Licence. Any content you publish from a built instance is expected to carry the Open Government Licence v3.0 unless stated otherwise.
+
+## Building and running this instance
+
+```
+npm install
+npm run build:data:fixture   # build snapshot offline from fixtures
+npm run dev                  # local dev server
+npm run build                # snapshot + typecheck + bundle + pre-render to dist/
+npm test                     # Vitest unit/DOM
+npm run test:e2e             # Playwright + axe accessibility
+```
+
+Configure a fork by editing `config.json` only. Set GitHub owner/repo, branding, default language and labels. See `docs/DECISIONS.md` for build decisions. A maintainer must set Pages source to "GitHub Actions".

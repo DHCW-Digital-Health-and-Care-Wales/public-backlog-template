@@ -17,5 +17,5 @@
     "esModuleInterop": true,
     "types": ["vitest/globals", "@testing-library/jest-dom", "node"]
   },
-  "include": ["src", "scripts", "tests"]
+  "include": ["src", "scripts", "tests/unit", "tests/setup.ts"]
 }

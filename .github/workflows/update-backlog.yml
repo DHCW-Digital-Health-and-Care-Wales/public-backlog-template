@@ -1,0 +1,36 @@
+name: Update backlog snapshot
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build snapshot from issues
+        run: npm run build:data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit snapshot if changed (never overwrite with failure)
+        run: |
+          if [[ -n "$(git status --porcelain public/data/backlog.json)" ]]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@users.noreply.github.com"
+            git add public/data/backlog.json
+            git commit -m "chore: refresh backlog snapshot"
+            git push
+          fi
