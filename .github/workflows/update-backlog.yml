@@ -4,20 +4,24 @@ name: Update backlog snapshot
 # The browser never calls the GitHub API at request time and never holds a
 # token; the built-in GITHUB_TOKEN is used here with least privilege.
 
+# This template repository does not host a live backlog, so the snapshot job
+# does not run automatically here. Forks that host a real backlog should
+# re-enable the scheduled/issues/push triggers below. The job can still be run
+# manually via workflow_dispatch for testing.
 on:
-  schedule:
-    # Every 20 minutes.
-    - cron: '*/20 * * * *'
-  issues:
-    types: [opened, edited, labeled, unlabeled, closed, reopened, deleted]
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'data/backlog-order.yml'
-      - 'config.json'
-      - 'scripts/build-snapshot.ts'
-      - 'src/lib/**'
+  # schedule:
+  #   # Every 20 minutes.
+  #   - cron: '*/20 * * * *'
+  # issues:
+  #   types: [opened, edited, labeled, unlabeled, closed, reopened, deleted]
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'data/backlog-order.yml'
+  #     - 'config.json'
+  #     - 'scripts/build-snapshot.ts'
+  #     - 'src/lib/**'
 
 permissions:
   contents: write
