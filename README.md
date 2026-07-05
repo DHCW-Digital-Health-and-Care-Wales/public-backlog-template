@@ -1,10 +1,10 @@
 # Public backlog
 
-A DHCW template for publishing a product backlog in the open. It is a public, accessible, bilingual website that shows people what a team is considering, what it is building, what is queued, and what it has decided against, sourced from GitHub Issues, with upvoting and a route to suggest new ideas. Any DHCW team can fork it and make it their own.
+A template for publishing a product backlog in the open. It is a public, accessible, bilingual website that shows people what a team is considering, what it is building, what is queued, and what it has decided against, sourced from GitHub Issues, with upvoting and a route to suggest new ideas. Any team can fork it and make it their own.
 
 The pages site can be accessed here to see what this will look like to a user: https://dhcw-digital-health-and-care-wales.github.io/public-backlog-template/
 
-Built on the DHCW Design System V2, Digital Health and Care Wales (Iechyd a Gofal Digidol Cymru), hosted free on GitHub Pages, with no backend and no tracking.
+Built on the DHCW Design System, hosted free on GitHub Pages, with no backend and no tracking.
 
 **About this template.** It ships with example items so the layout renders with something in it. Replace them with your own work, or point it at your repository's Issues. See [Fork this for your team](#fork-this-for-your-team).
 
@@ -50,12 +50,12 @@ The authoritative requirement and the design decisions behind all of this are in
 
 ## Fork this for your team
 
-This repository is built to be reused. Any DHCW team can fork it to publish its own backlog in the open, on the same accessible, bilingual, DHCW-branded foundation.
+This repository is built to be reused. Any team can fork it to publish its own backlog in the open, on the same accessible, and bilingual foundation.
 
 ### What you get
 
 - A static site, with no backend to run or secure, built with Vite, React, TypeScript and Tailwind.
-- The DHCW Design System V2 look and feel, consistent with the directorate's roadmap.
+- The NHS Wales Design System look and feel, consistent with other web pages.
 - A bilingual Welsh and English structure, an accessibility statement and a privacy note, all in place.
 - A GitHub Action that keeps the board in step with your Issues.
 
@@ -75,15 +75,16 @@ Node.js 20, npm, and a GitHub repository with Issues enabled.
 
 ### What you must keep
 
-These are obligations and DHCW conventions, not preferences:
+These are obligations and conventions, not preferences:
 
 - **WCAG 2.2 AA.** As a Welsh public sector website it must be accessible. Keep the semantic structure, keyboard support, contrast, and status conveyed in text rather than by colour alone.
 - **The bilingual structure.** Welsh must be treated no less favourably than English. Keep the language-keyed content and the language toggle, and fill in the Welsh as translations are ready.
 - **The curation gate.** Only triaged, labelled issues are public, so suggestions are reviewed before they appear. Do not remove this.
 - **No third-party tracking.** No tracking cookies and no third-party analytics, so there is nothing to consent to. Self-host fonts rather than calling a font service.
-- **House style in interface copy.** British English. No em dashes. No exclamation marks.
+- **House style in interface copy.**
+professional but conversational and keep things simple, no jargon, the aim is to create understanding.
 
-If your team would like help getting started, open an issue on this repository or get in touch with the PCMH product and delivery team.
+If your team would like help getting started, open an issue on this repository or get in touch.
 
 ## Labels
 
