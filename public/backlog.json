@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T13:16:03.695Z",
+  "generatedAt": "2026-07-20T11:25:09.111Z",
   "columns": {
     "considering": [
       {
@@ -259,7 +259,7 @@
   "health": {
     "staleInProgress": 1,
     "untriaged": 1,
-    "oldestUntriagedDays": 2,
+    "oldestUntriagedDays": 23,
     "contentErrors": 1,
     "flags": [
       {
